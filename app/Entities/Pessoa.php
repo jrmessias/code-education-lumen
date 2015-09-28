@@ -11,6 +11,8 @@ namespace app\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Entities\Telefone;
+
 class Pessoa extends Model
 {
 
@@ -24,6 +26,6 @@ class Pessoa extends Model
 
     public function telefones()
     {
-        //$this->hasMany()
+        return $this->hasMany(Telefone::class);
     }
 }

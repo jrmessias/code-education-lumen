@@ -23,8 +23,8 @@ class Telefone extends Model
         'sufixo'
     ];
 
-    public function pessoa(){
-
+    public function getNumeroAttribute(){
+        return "{$this->codpais} ({$this->ddd}) {$this->prefixo}-{$this->sufixo}";
     }
 
 }

@@ -1,0 +1,25 @@
+{
+  "name": "CodeEducationLumen",
+  "version": "0.1.0",
+  "authors": [
+    "Júnior Messias <jrmessias@gmail.com>"
+  ],
+  "description": "Code Education - Lumen",
+  "keywords": [
+    "code",
+    "education",
+    "lumen",
+    "imj"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "fontawesome": "~4.4.0",
+    "Materialize": "materialize#~0.97.1",
+    "bootstrap": "~3.3.5"
+  }
+}
