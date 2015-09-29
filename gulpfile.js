@@ -1,6 +1,8 @@
 var elixir = require('laravel-elixir'),
     bowerDir = "vendor/bower_components/";
 
+elixir.config.sourcemaps = false;
+
 elixir(function(mix){
     mix.copy(bowerDir+'bootstrap/fonts', 'public/fonts')
         .copy(bowerDir+'fontawesome/fonts', 'public/fonts')

@@ -26,9 +26,10 @@
                 Code.Education<br>
                 <small><i class="glyphicon glyphicon-phone-alt"></i> Agenda Telefônica</small>
                 <span class="pull-right">
-                    <form class="form-inline" action="#" method="post">
+                    <form class="form-inline" action="{{ route('agenda.busca') }}" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Pesquisar contato...">
+                            <input type="text" name="busca" class="form-control" placeholder="Pesquisar contato..."
+                                   value="">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
                             </span>
@@ -41,16 +42,32 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            @foreach(range('A', 'Z') as $letra)
-                <a href="{{ route('agenda.letra', ['letra' => $letra]) }}" class="btn btn-success">{{ $letra }}</a>
+            @foreach($letras as $letra)
+                <a href="{{ route('agenda.letra', ['letra' => $letra->inicial]) }}"
+                   class="btn btn-success">{{ $letra->inicial }}</a>
             @endforeach
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12 btn-row">
-            <a href="#" class="btn btn-info"><i class="fa fa-plus-circle"></i> Adicionar contato </a>
+        <div class="col-lg-12">
+            @yield('titulo')
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12 btn-row">
+            <a href="{{ route('agenda.adicionar') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Adicionar
+                contato </a>
+        </div>
+    </div>
+    @if (session('status'))
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="row">
         @yield('content')
     </div>
