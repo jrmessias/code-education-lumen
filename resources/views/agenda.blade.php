@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-    <h2><small><i class="fa fa-list"></i> Lista de contatos</h2>
+    <h2><small><i class="fa fa-list"></i> Lista de contatos</small></h2>
 @endsection
 
 @section('content')

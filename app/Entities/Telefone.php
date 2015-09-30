@@ -8,8 +8,9 @@
 
 namespace app\Entities;
 
-
 use Illuminate\Database\Eloquent\Model;
+
+use App\Entities\Pessoa;
 
 class Telefone extends Model
 {
@@ -27,4 +28,8 @@ class Telefone extends Model
         return "{$this->codpais} ({$this->ddd}) {$this->prefixo}-{$this->sufixo}";
     }
 
+    public function pessoa()
+    {
+        return $this->belongsTo(Pessoa::class);
+    }
 }

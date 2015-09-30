@@ -8,7 +8,7 @@
     <title>Code Agenda</title>
 
     <!-- Bootstrap -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{ url('css/app.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +31,7 @@
                             <input type="text" name="busca" class="form-control" placeholder="Pesquisar contato..."
                                    value="">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                             </span>
                         </div>
                         <!-- /input-group -->
@@ -55,15 +55,15 @@
     </div>
     <div class="row">
         <div class="col-lg-12 btn-row">
-            <a href="{{ route('agenda.adicionar') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Adicionar
+            <a href="{{ route('pessoa.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Novo
                 contato </a>
         </div>
     </div>
-    @if (session('status'))
+    @if (session('msg'))
         <div class="row">
             <div class="col-lg-12">
                 <div class="alert alert-success">
-                    {{ session('status') }}
+                    {{ session('msg') }}
                 </div>
             </div>
         </div>
@@ -73,6 +73,6 @@
     </div>
 </div>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/scripts.js"></script>
+<script src="{{ url('js/scripts.js') }}"></script>
 </body>
 </html>
