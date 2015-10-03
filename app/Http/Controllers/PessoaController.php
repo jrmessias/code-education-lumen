@@ -57,7 +57,7 @@ class PessoaController extends Controller
 
         if($validator->fails())
         {
-            return redirect()->route('pessoa.create')
+            return redirect()->route('pessoa.edit',['id' => $request->get('id')])
                 ->withErrors($validator)
                 ->withInput();
         }

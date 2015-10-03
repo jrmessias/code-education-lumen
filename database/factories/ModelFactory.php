@@ -38,3 +38,11 @@ $factory->define(App\Entities\Telefone::class, function ($faker) {
         'pessoa_id' => $faker->numberBetween(1, 30)
     ];
 });
+
+$factory->define(App\Entities\Email::class, function ($faker) {
+    return [
+        'descricao' => $faker->randomElement(['Residencial', 'Comercial']),
+        'email' => $faker->freeEmail,
+        'pessoa_id' => $faker->numberBetween(1, 30)
+    ];
+});

@@ -42,6 +42,26 @@ $app->delete('/pessoa/{id}', [
  * TELEFONE
  */
 
+$app->get('/telefone/create/{id}', [
+    'as' => 'telefone.create',
+    'uses' => 'TelefoneController@create'
+]);
+
+$app->post('/telefone/store', [
+    'as' => 'telefone.store',
+    'uses' => 'TelefoneController@store'
+]);
+
+$app->get('/telefone/{id}/editar', [
+    'as' => 'telefone.edit',
+    'uses' => 'TelefoneController@edit'
+]);
+
+$app->put('/telefone/{id}', [
+    'as' => 'telefone.update',
+    'uses' => 'TelefoneController@update'
+]);
+
 $app->get('/telefone/{id}/apagar', [
     'as' => 'telefone.delete',
     'uses' => 'TelefoneController@delete'
@@ -50,16 +70,6 @@ $app->get('/telefone/{id}/apagar', [
 $app->delete('/telefone/{id}', [
     'as' => 'telefone.destroy',
     'uses' => 'TelefoneController@destroy'
-]);
-
-$app->get('/telefone/{id}/editar', [
-    'as' => 'telefone.edit',
-    'uses' => 'TelefoneController@edit'
-]);
-
-$app->get('/telefone/{id}', [
-    'as' => 'telefone.update',
-    'uses' => 'TelefoneController@update'
 ]);
 
 /*************
