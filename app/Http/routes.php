@@ -72,6 +72,40 @@ $app->delete('/telefone/{id}', [
     'uses' => 'TelefoneController@destroy'
 ]);
 
+/***********
+ * EMAIL
+ */
+
+$app->get('/email/create/{id}', [
+    'as' => 'email.create',
+    'uses' => 'EmailController@create'
+]);
+
+$app->post('/email/store', [
+    'as' => 'email.store',
+    'uses' => 'EmailController@store'
+]);
+
+$app->get('/email/{id}/editar', [
+    'as' => 'email.edit',
+    'uses' => 'EmailController@edit'
+]);
+
+$app->put('/email/{id}', [
+    'as' => 'email.update',
+    'uses' => 'EmailController@update'
+]);
+
+$app->get('/email/{id}/apagar', [
+    'as' => 'email.delete',
+    'uses' => 'EmailController@delete'
+]);
+
+$app->delete('/email/{id}', [
+    'as' => 'email.destroy',
+    'uses' => 'EmailController@destroy'
+]);
+
 /*************
  * AGENDA
  */
